@@ -7,15 +7,23 @@
     body { font-family: sans-serif; padding: 20px; }
     textarea { width: 100%; height: 100px; }
     button { margin-top: 10px; }
+    #output { 
+      margin-top: 10px; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+      white-space: pre-wrap; 
+      word-break: break-all; 
+    }
   </style>
 </head>
 <body>
   <h2>ASCII Binary Translator</h2>
   <textarea id="input" placeholder="Enter text here"
     autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+  <br>
   <button onclick="translate()">Translate</button>
-  <textarea id="output" placeholder="Binary output will appear here"
-    readonly></textarea>
+  <button onclick="copyOutput()">Copy</button>
+  <div id="output">Binary output will appear here</div>
 
   <script src="index.js"></script>
 </body>
