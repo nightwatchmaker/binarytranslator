@@ -16,5 +16,15 @@ function translate() {
       return binary + '/';
     }).join('');
   }).join(' ');
-  document.getElementById("output").value = output;
+  document.getElementById("output").innerText = output || "No output";
+}
+
+function copyOutput() {
+  const outputDiv = document.getElementById("output");
+  const text = outputDiv.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    alert("Copied to clipboard!");
+  }).catch(err => {
+    alert("Failed to copy: " + err);
+  });
 }
